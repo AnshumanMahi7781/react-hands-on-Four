@@ -11,12 +11,13 @@ function EditStudent() {
   let NavigateToStudent = useNavigate();
   let param = useParams();
 
-  let currentData = contextData.stuDetails.filter((data) => {
+  let filterData = (data)=>{
     if (Number(data.stuID) === Number(param.ID)) {
       return data;
 
     }
-  })
+  }
+  let currentData = contextData.stuDetails.filter(filterData)
 
 let changeHandler = (e)=>{
   
